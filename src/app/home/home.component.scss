@@ -1,0 +1,101 @@
+@import '../../styles/_colors.scss';
+
+.container {
+
+  height: 100%;
+  position: relative;
+}
+
+.slider-shrinker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-cloister {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  margin-left: -25%;
+}
+
+.ethereum-pic {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+.fiat-pic {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.fiat-shadow {
+  box-shadow: 0 2px 33px 0 rgba(135,225,210, 0.45);
+}
+
+.eth-shadow {
+  box-shadow: 0 2px 33px 0 rgba(85, 139, 177, 0.45);
+}
+
+.welcome {
+  text-align: center;
+  display: block;
+  margin-top: 0px;
+  line-height: 98px;
+  letter-spacing: 4px;
+  font-size: 48px;
+}
+
+.directions {
+  text-align: center;
+  letter-spacing: 1.8px;
+  line-height: 98px;
+}
+
+input[type=checkbox]{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 260px;
+  height: 66px;
+  background: white;
+  display: block;
+  border-radius: 130px;
+  position: relative;
+  border: 1px solid $eth-color;
+}
+
+label:after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 60px;
+  height: 60px;
+  background: $eth-color;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: white;
+  border: 1px solid $fiat-color;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+  background: $fiat-color;
+}
+
+label:active:after {
+  width: 130px;
+}

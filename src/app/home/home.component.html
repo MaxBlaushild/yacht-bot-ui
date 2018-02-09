@@ -1,0 +1,12 @@
+<section class="container" [ngClass]="{'fiat-shadow': isFiat, 'eth-shadow': !isFiat}">
+  <section class="second-cloister">
+    <h2 class="welcome">welcome Peeboy!</h2>
+    <section class="slider-shrinker">
+      <input type="checkbox" id="switch" [(ngModel)]="isFiat"/><label for="switch">Toggle</label>
+    </section>
+    <p *ngIf="isFiat" class="directions">Slide to buy it all!</p>
+    <p *ngIf="!isFiat" class="directions">Slide to sell it all!</p>
+  </section>
+  <img *ngIf="!isFiat" class="ethereum-pic" src="/assets/images/ethereum.png">
+  <img *ngIf="isFiat" class="fiat-pic" src="/assets/images/fiat.png">
+</section>
